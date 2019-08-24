@@ -23,6 +23,7 @@
 	<modules>
 		<module>iskool-auth-server</module>
 		<module>iskool-resource</module>
+		<module>iskool-repository</module>
 	</modules>
 
 	<dependencies>

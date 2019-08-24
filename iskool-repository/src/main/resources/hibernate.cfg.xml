@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">admin</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/iskool?autoReconnect=true;useUnicode=true;createDatabaseIfNotExist=true;characterEncoding=utf-8</property>
+		<property name="hibernate.connection.username">admin</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- <property name="connectionProperties">useUnicode=yes;characterEncoding=UTF-8"</property> -->
+		<!-- <property name="hibernate.connection.characterEncoding">utf8</property> -->
+		<property name="hibernate.connection.CharSet">utf8</property>
+		<property name="hibernate.connection.characterEncoding">utf8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+
+		<mapping class="com.sportsit.iskool.dao.model.AcademicYear" />
+		<mapping class="com.sportsit.iskool.dao.model.Course" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.CourseStudentMapping" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.CourseSubjectMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Department" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.DepartmentEmployeeMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Employee" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.EmployeeSubjectMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Organization" />
+		<mapping class="com.sportsit.iskool.dao.model.Parent" />
+		<mapping class="com.sportsit.iskool.dao.model.Section" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.SectionAcademicYearMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Student" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.StudentElectivesAcademicYearMapping" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.StudentParentMapping" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.StudentRoleMapping" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.StudentSubjectEmployeeMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Subject" />
+		<mapping class="com.sportsit.iskool.dao.model.SubjectType" />
+		<mapping class="com.sportsit.iskool.dao.model.UserType" />
+
+		<mapping
+			class="com.sportsit.iskool.dao.model.OauthAccessToken" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.OauthClientDetails" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.OauthClientToken" />
+		<mapping class="com.sportsit.iskool.dao.model.OauthCode" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.OauthRefreshToken" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.OrgResourceScope" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.ParentRoleMapping" />
+		<mapping class="com.sportsit.iskool.dao.model.Resource" />
+		<mapping class="com.sportsit.iskool.dao.model.Role" />
+		<mapping
+			class="com.sportsit.iskool.dao.model.EmployeeRoleMapping" />
+
+
+	</session-factory>
+</hibernate-configuration>
