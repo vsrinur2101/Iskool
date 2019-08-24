@@ -25,11 +25,11 @@ public class Organization  implements java.io.Serializable {
      private int id;
      private String name;
      private String address;
-     private Set employees = new HashSet(0);
-     private Set academicyears = new HashSet(0);
-     private Set students = new HashSet(0);
-     private Set departments = new HashSet(0);
-     private Set oauthClientDetailses = new HashSet(0);
+     private Set<Employee> employees = new HashSet<Employee>(0);
+     private Set<Academicyear> academicyears = new HashSet<Academicyear>(0);
+     private Set<Student> students = new HashSet<Student>(0);
+     private Set<Department> departments = new HashSet<Department>(0);
+     private Set<OauthClientDetails> oauthClientDetailses = new HashSet<OauthClientDetails>(0);
 
     public Organization() {
     }
@@ -40,7 +40,7 @@ public class Organization  implements java.io.Serializable {
         this.name = name;
         this.address = address;
     }
-    public Organization(int id, String name, String address, Set employees, Set academicyears, Set students, Set departments, Set oauthClientDetailses) {
+    public Organization(int id, String name, String address, Set<Employee> employees, Set<Academicyear> academicyears, Set<Student> students, Set<Department> departments, Set<OauthClientDetailses> oauthClientDetailses) {
        this.id = id;
        this.name = name;
        this.address = address;
@@ -84,7 +84,7 @@ public class Organization  implements java.io.Serializable {
         return this.employees;
     }
     
-    public void setEmployees(Set employees) {
+    public void setEmployees(Set<Employee> employees) {
         this.employees = employees;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organization")
@@ -92,7 +92,7 @@ public class Organization  implements java.io.Serializable {
         return this.academicyears;
     }
     
-    public void setAcademicyears(Set academicyears) {
+    public void setAcademicyears(Set<Academicyear> academicyears) {
         this.academicyears = academicyears;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organization")
@@ -100,7 +100,7 @@ public class Organization  implements java.io.Serializable {
         return this.students;
     }
     
-    public void setStudents(Set students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organization")
@@ -108,7 +108,7 @@ public class Organization  implements java.io.Serializable {
         return this.departments;
     }
     
-    public void setDepartments(Set departments) {
+    public void setDepartments(Set<Department> departments) {
         this.departments = departments;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="organization")
@@ -116,7 +116,7 @@ public class Organization  implements java.io.Serializable {
         return this.oauthClientDetailses;
     }
     
-    public void setOauthClientDetailses(Set oauthClientDetailses) {
+    public void setOauthClientDetailses(Set<OauthClientDetails> oauthClientDetailses) {
         this.oauthClientDetailses = oauthClientDetailses;
     }
 

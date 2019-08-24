@@ -32,9 +32,9 @@ public class Academicyear  implements java.io.Serializable {
      private Date startdate;
      private String description;
      private Date enddate;
-     private Set sectionAcademicyearMappings = new HashSet(0);
-     private Set employeeSubjectMappings = new HashSet(0);
-     private Set studentElectivesAcademicyearMappings = new HashSet(0);
+     private Set<SectionAcademicyearMapping> sectionAcademicyearMappings = new HashSet<SectionAcademicyearMapping>(0);
+     private Set<EmployeeSubjectMapping> employeeSubjectMappings = new HashSet<EmployeeSubjectMapping>(0);
+     private Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings = new HashSet<StudentElectivesAcademicyearMapping>(0);
 
     public Academicyear() {
     }
@@ -47,7 +47,9 @@ public class Academicyear  implements java.io.Serializable {
         this.description = description;
         this.enddate = enddate;
     }
-    public Academicyear(int id, Organization organization, Date startdate, String description, Date enddate, Set sectionAcademicyearMappings, Set employeeSubjectMappings, Set studentElectivesAcademicyearMappings) {
+    public Academicyear(int id, Organization organization, Date startdate, String description, Date enddate,
+    		Set<SectionAcademicyearMapping> sectionAcademicyearMappings, Set<EmployeeSubjectMapping>employeeSubjectMappings,
+    		Set<StudentElectivesAcademicyearMapping>studentElectivesAcademicyearMappings) {
        this.id = id;
        this.organization = organization;
        this.startdate = startdate;
@@ -105,11 +107,11 @@ public class Academicyear  implements java.io.Serializable {
         this.enddate = enddate;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="academicyear")
-    public Set getSectionAcademicyearMappings() {
+    public Set<SectionAcademicyearMapping> getSectionAcademicyearMappings() {
         return this.sectionAcademicyearMappings;
     }
     
-    public void setSectionAcademicyearMappings(Set sectionAcademicyearMappings) {
+    public void setSectionAcademicyearMappings(Set<SectionAcademicyearMapping> sectionAcademicyearMappings) {
         this.sectionAcademicyearMappings = sectionAcademicyearMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="academicyear")
@@ -117,7 +119,7 @@ public class Academicyear  implements java.io.Serializable {
         return this.employeeSubjectMappings;
     }
     
-    public void setEmployeeSubjectMappings(Set employeeSubjectMappings) {
+    public void setEmployeeSubjectMappings(Set<EmployeeSubjectMapping>employeeSubjectMappings) {
         this.employeeSubjectMappings = employeeSubjectMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="academicyear")
@@ -125,7 +127,7 @@ public class Academicyear  implements java.io.Serializable {
         return this.studentElectivesAcademicyearMappings;
     }
     
-    public void setStudentElectivesAcademicyearMappings(Set studentElectivesAcademicyearMappings) {
+    public void setStudentElectivesAcademicyearMappings(Set<StudentElectivesAcademicyearMapping>studentElectivesAcademicyearMappings) {
         this.studentElectivesAcademicyearMappings = studentElectivesAcademicyearMappings;
     }
 

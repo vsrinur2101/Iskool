@@ -30,9 +30,9 @@ public class Subject  implements java.io.Serializable {
      private SubjectType subjectType;
      private String name;
      private String description;
-     private Set studentElectivesAcademicyearMappings = new HashSet(0);
-     private Set employeeSubjectMappings = new HashSet(0);
-     private Set courseSubjectMappings = new HashSet(0);
+     private Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings = new HashSet<StudentElectivesAcademicyearMapping>(0);
+     private Set<EmployeeSubjectMapping> employeeSubjectMappings = new HashSet<EmployeeSubjectMapping>(0);
+     private Set<CourseSubjectMapping> courseSubjectMappings = new HashSet<CourseSubjectMapping>(0);
 
     public Subject() {
     }
@@ -43,7 +43,7 @@ public class Subject  implements java.io.Serializable {
         this.subjectType = subjectType;
         this.name = name;
     }
-    public Subject(int id, SubjectType subjectType, String name, String description, Set studentElectivesAcademicyearMappings, Set employeeSubjectMappings, Set courseSubjectMappings) {
+    public Subject(int id, SubjectType subjectType, String name, String description, Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings, Set<EmployeeSubjectMapping> employeeSubjectMappings, Set<CourseSubjectMapping> courseSubjectMappings) {
        this.id = id;
        this.subjectType = subjectType;
        this.name = name;
@@ -91,27 +91,27 @@ public class Subject  implements java.io.Serializable {
         this.description = description;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="subject")
-    public Set getStudentElectivesAcademicyearMappings() {
+    public Set<StudentElectivesAcademicyearMapping> getStudentElectivesAcademicyearMappings() {
         return this.studentElectivesAcademicyearMappings;
     }
     
-    public void setStudentElectivesAcademicyearMappings(Set studentElectivesAcademicyearMappings) {
+    public void setStudentElectivesAcademicyearMappings(Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings) {
         this.studentElectivesAcademicyearMappings = studentElectivesAcademicyearMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="subject")
-    public Set getEmployeeSubjectMappings() {
+    public Set<EmployeeSubjectMapping> getEmployeeSubjectMappings() {
         return this.employeeSubjectMappings;
     }
     
-    public void setEmployeeSubjectMappings(Set employeeSubjectMappings) {
+    public void setEmployeeSubjectMappings(Set<EmployeeSubjectMapping> employeeSubjectMappings) {
         this.employeeSubjectMappings = employeeSubjectMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="subject")
-    public Set getCourseSubjectMappings() {
+    public Set<CourseSubjectMapping> getCourseSubjectMappings() {
         return this.courseSubjectMappings;
     }
     
-    public void setCourseSubjectMappings(Set courseSubjectMappings) {
+    public void setCourseSubjectMappings(Set<CourseSubjectMapping> courseSubjectMappings) {
         this.courseSubjectMappings = courseSubjectMappings;
     }
 

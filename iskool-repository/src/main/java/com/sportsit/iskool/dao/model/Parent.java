@@ -36,8 +36,8 @@ public class Parent  implements java.io.Serializable {
      private int expired;
      private Date created;
      private Date lastupdated;
-     private Set parentRoleMappings = new HashSet(0);
-     private Set studentParentMappings = new HashSet(0);
+     private Set<ParentRoleMapping> parentRoleMappings = new HashSet<ParentRoleMapping>(0);
+     private Set<StudentParentMapping> studentParentMappings = new HashSet<StudentParentMapping>(0);
 
     public Parent() {
     }
@@ -56,7 +56,7 @@ public class Parent  implements java.io.Serializable {
         this.created = created;
         this.lastupdated = lastupdated;
     }
-    public Parent(int id, String firstname, String lastname, String username, String password, String email, String mobile, int enabled, int expired, Date created, Date lastupdated, Set parentRoleMappings, Set studentParentMappings) {
+    public Parent(int id, String firstname, String lastname, String username, String password, String email, String mobile, int enabled, int expired, Date created, Date lastupdated, Set<ParentRoleMapping> parentRoleMappings, Set<StudentParentMapping> studentParentMappings) {
        this.id = id;
        this.firstname = firstname;
        this.lastname = lastname;
@@ -177,7 +177,7 @@ public class Parent  implements java.io.Serializable {
         return this.parentRoleMappings;
     }
     
-    public void setParentRoleMappings(Set parentRoleMappings) {
+    public void setParentRoleMappings(Set<ParentRoleMapping> parentRoleMappings) {
         this.parentRoleMappings = parentRoleMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="parent")
@@ -185,7 +185,7 @@ public class Parent  implements java.io.Serializable {
         return this.studentParentMappings;
     }
     
-    public void setStudentParentMappings(Set studentParentMappings) {
+    public void setStudentParentMappings(Set<StudentParentMapping> studentParentMappings) {
         this.studentParentMappings = studentParentMappings;
     }
 

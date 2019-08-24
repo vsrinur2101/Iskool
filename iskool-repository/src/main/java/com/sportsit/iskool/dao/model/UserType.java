@@ -18,11 +18,8 @@ public class UserType  implements java.io.Serializable {
 
 
      private int id;
-     private String student;
-     private String parent;
-     private String employee;
-     private String admin;
-     private String superadmin;
+     private String name;
+     private String description;
 
     public UserType() {
     }
@@ -31,13 +28,10 @@ public class UserType  implements java.io.Serializable {
     public UserType(int id) {
         this.id = id;
     }
-    public UserType(int id, String student, String parent, String employee, String admin, String superadmin) {
+    public UserType(int id, String name, String description) {
        this.id = id;
-       this.student = student;
-       this.parent = parent;
-       this.employee = employee;
-       this.admin = admin;
-       this.superadmin = superadmin;
+       this.name = name;
+       this.description = description;
     }
    
      @Id 
@@ -51,54 +45,25 @@ public class UserType  implements java.io.Serializable {
         this.id = id;
     }
     
-    @Column(name="student", length=45)
-    public String getStudent() {
-        return this.student;
+    @Column(name="name", length=45)
+    public String getName() {
+        return this.name;
     }
     
-    public void setStudent(String student) {
-        this.student = student;
+    public void setName(String name) {
+        this.name = name;
     }
     
-    @Column(name="parent", length=45)
-    public String getParent() {
-        return this.parent;
+    @Column(name="description", length=45)
+    public String getDescription() {
+        return this.description;
     }
     
-    public void setParent(String parent) {
-        this.parent = parent;
+    public void setDescription(String description) {
+        this.description = description;
     }
     
-    @Column(name="employee", length=45)
-    public String getEmployee() {
-        return this.employee;
-    }
     
-    public void setEmployee(String employee) {
-        this.employee = employee;
-    }
-    
-    @Column(name="admin", length=45)
-    public String getAdmin() {
-        return this.admin;
-    }
-    
-    public void setAdmin(String admin) {
-        this.admin = admin;
-    }
-    
-    @Column(name="superadmin", length=45)
-    public String getSuperadmin() {
-        return this.superadmin;
-    }
-    
-    public void setSuperadmin(String superadmin) {
-        this.superadmin = superadmin;
-    }
-
-
-
-
 }
 
 

@@ -28,7 +28,7 @@ public class Department  implements java.io.Serializable {
      private Organization organization;
      private String name;
      private String description;
-     private Set departmentEmployeeMappings = new HashSet(0);
+     private Set<DepartmentEmployeeMapping> departmentEmployeeMappings = new HashSet<DepartmentEmployeeMapping>(0);
 
     public Department() {
     }
@@ -39,7 +39,7 @@ public class Department  implements java.io.Serializable {
         this.organization = organization;
         this.name = name;
     }
-    public Department(int id, Organization organization, String name, String description, Set departmentEmployeeMappings) {
+    public Department(int id, Organization organization, String name, String description, Set<DepartmentEmployeeMapping> departmentEmployeeMappings) {
        this.id = id;
        this.organization = organization;
        this.name = name;
@@ -85,11 +85,11 @@ public class Department  implements java.io.Serializable {
         this.description = description;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="department")
-    public Set getDepartmentEmployeeMappings() {
+    public Set<DepartmentEmployeeMapping> getDepartmentEmployeeMappings() {
         return this.departmentEmployeeMappings;
     }
     
-    public void setDepartmentEmployeeMappings(Set departmentEmployeeMappings) {
+    public void setDepartmentEmployeeMappings(Set<DepartmentEmployeeMapping> departmentEmployeeMappings) {
         this.departmentEmployeeMappings = departmentEmployeeMappings;
     }
 

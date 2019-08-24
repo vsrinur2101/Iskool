@@ -42,11 +42,11 @@ public class Employee  implements java.io.Serializable {
      private int expired;
      private Date created;
      private Date lastupdated;
-     private Set departmentEmployeeMappings = new HashSet(0);
-     private Set studentElectivesAcademicyearMappings = new HashSet(0);
-     private Set sections = new HashSet(0);
-     private Set employeeRoleMappings = new HashSet(0);
-     private Set employeeSubjectMappings = new HashSet(0);
+     private Set<DepartmentEmployeeMapping> departmentEmployeeMappings = new HashSet<DepartmentEmployeeMapping>(0);
+     private Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings = new HashSet<StudentElectivesAcademicyearMapping>(0);
+     private Set<Section> sections = new HashSet<Section>(0);
+     private Set<EmployeeRoleMapping> employeeRoleMappings = new HashSet<EmployeeRoleMapping>(0);
+     private Set<EmployeeSubjectMapping> employeeSubjectMappings = new HashSet<EmployeeSubjectMapping>(0);
 
     public Employee() {
     }
@@ -66,7 +66,7 @@ public class Employee  implements java.io.Serializable {
         this.created = created;
         this.lastupdated = lastupdated;
     }
-    public Employee(int id, Organization organization, String firstname, String lastname, String email, String primarycontact, String secondarycontact, String employeeId, String password, int enabled, int expired, Date created, Date lastupdated, Set departmentEmployeeMappings, Set studentElectivesAcademicyearMappings, Set sections, Set employeeRoleMappings, Set employeeSubjectMappings) {
+    public Employee(int id, Organization organization, String firstname, String lastname, String email, String primarycontact, String secondarycontact, String employeeId, String password, int enabled, int expired, Date created, Date lastupdated, Set<DepartmentEmployeeMapping> departmentEmployeeMappings, Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings, Set<Section> sections, Set<EmployeeRoleMapping> employeeRoleMappings, Set<EmployeeSubjectMapping> employeeSubjectMappings) {
        this.id = id;
        this.organization = organization;
        this.firstname = firstname;
@@ -206,43 +206,43 @@ public class Employee  implements java.io.Serializable {
         this.lastupdated = lastupdated;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
-    public Set getDepartmentEmployeeMappings() {
+    public Set<DepartmentEmployeeMapping> getDepartmentEmployeeMappings() {
         return this.departmentEmployeeMappings;
     }
     
-    public void setDepartmentEmployeeMappings(Set departmentEmployeeMappings) {
+    public void setDepartmentEmployeeMappings(Set<DepartmentEmployeeMapping> departmentEmployeeMappings) {
         this.departmentEmployeeMappings = departmentEmployeeMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
-    public Set getStudentElectivesAcademicyearMappings() {
+    public Set<StudentElectivesAcademicyearMapping> getStudentElectivesAcademicyearMappings() {
         return this.studentElectivesAcademicyearMappings;
     }
     
-    public void setStudentElectivesAcademicyearMappings(Set studentElectivesAcademicyearMappings) {
+    public void setStudentElectivesAcademicyearMappings(Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings) {
         this.studentElectivesAcademicyearMappings = studentElectivesAcademicyearMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
-    public Set getSections() {
+    public Set<Section> getSections() {
         return this.sections;
     }
     
-    public void setSections(Set sections) {
+    public void setSections(Set<Section> sections) {
         this.sections = sections;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
-    public Set getEmployeeRoleMappings() {
+    public Set<EmployeeRoleMapping> getEmployeeRoleMappings() {
         return this.employeeRoleMappings;
     }
     
-    public void setEmployeeRoleMappings(Set employeeRoleMappings) {
+    public void setEmployeeRoleMappings(Set<EmployeeRoleMapping> employeeRoleMappings) {
         this.employeeRoleMappings = employeeRoleMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
-    public Set getEmployeeSubjectMappings() {
+    public Set<EmployeeSubjectMapping> getEmployeeSubjectMappings() {
         return this.employeeSubjectMappings;
     }
     
-    public void setEmployeeSubjectMappings(Set employeeSubjectMappings) {
+    public void setEmployeeSubjectMappings(Set<EmployeeSubjectMapping> employeeSubjectMappings) {
         this.employeeSubjectMappings = employeeSubjectMappings;
     }
 

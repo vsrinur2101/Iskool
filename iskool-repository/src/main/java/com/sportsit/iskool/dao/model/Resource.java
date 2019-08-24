@@ -25,7 +25,7 @@ public class Resource  implements java.io.Serializable {
      private int id;
      private String name;
      private String description;
-     private Set orgResourceScopes = new HashSet(0);
+     private Set<OrgResourceScope> orgResourceScopes = new HashSet<OrgResourceScope>(0);
 
     public Resource() {
     }
@@ -34,7 +34,7 @@ public class Resource  implements java.io.Serializable {
     public Resource(int id) {
         this.id = id;
     }
-    public Resource(int id, String name, String description, Set orgResourceScopes) {
+    public Resource(int id, String name, String description, Set<OrgResourceScope> orgResourceScopes) {
        this.id = id;
        this.name = name;
        this.description = description;
@@ -74,7 +74,7 @@ public class Resource  implements java.io.Serializable {
         return this.orgResourceScopes;
     }
     
-    public void setOrgResourceScopes(Set orgResourceScopes) {
+    public void setOrgResourceScopes(Set<OrgResourceScope> orgResourceScopes) {
         this.orgResourceScopes = orgResourceScopes;
     }
 

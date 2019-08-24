@@ -27,9 +27,9 @@ public class Role  implements java.io.Serializable {
      private int id;
      private String name;
      private String description;
-     private Set employeeRoleMappings = new HashSet(0);
-     private Set studentRoleMappings = new HashSet(0);
-     private Set parentRoleMappings = new HashSet(0);
+     private Set<EmployeeRoleMapping> employeeRoleMappings = new HashSet<EmployeeRoleMapping>(0);
+     private Set<StudentRoleMapping> studentRoleMappings = new HashSet<StudentRoleMapping>(0);
+     private Set<ParentRoleMapping> parentRoleMappings = new HashSet<ParentRoleMapping>(0);
 
     public Role() {
     }
@@ -39,7 +39,7 @@ public class Role  implements java.io.Serializable {
         this.id = id;
         this.name = name;
     }
-    public Role(int id, String name, String description, Set employeeRoleMappings, Set studentRoleMappings, Set parentRoleMappings) {
+    public Role(int id, String name, String description, Set<EmployeeRoleMapping> employeeRoleMappings, Set<StudentRoleMapping> studentRoleMappings, Set<ParentRoleMapping> parentRoleMappings) {
        this.id = id;
        this.name = name;
        this.description = description;
@@ -77,27 +77,27 @@ public class Role  implements java.io.Serializable {
         this.description = description;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="role")
-    public Set getEmployeeRoleMappings() {
+    public Set<EmployeeRoleMapping> getEmployeeRoleMappings() {
         return this.employeeRoleMappings;
     }
     
-    public void setEmployeeRoleMappings(Set employeeRoleMappings) {
+    public void setEmployeeRoleMappings(Set<EmployeeRoleMapping> employeeRoleMappings) {
         this.employeeRoleMappings = employeeRoleMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="role")
-    public Set getStudentRoleMappings() {
+    public Set<StudentRoleMapping> getStudentRoleMappings() {
         return this.studentRoleMappings;
     }
     
-    public void setStudentRoleMappings(Set studentRoleMappings) {
+    public void setStudentRoleMappings(Set<StudentRoleMapping> studentRoleMappings) {
         this.studentRoleMappings = studentRoleMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="role")
-    public Set getParentRoleMappings() {
+    public Set<ParentRoleMapping> getParentRoleMappings() {
         return this.parentRoleMappings;
     }
     
-    public void setParentRoleMappings(Set parentRoleMappings) {
+    public void setParentRoleMappings(Set<ParentRoleMapping> parentRoleMappings) {
         this.parentRoleMappings = parentRoleMappings;
     }
 

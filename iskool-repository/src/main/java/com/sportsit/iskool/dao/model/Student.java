@@ -41,12 +41,12 @@ public class Student  implements java.io.Serializable {
      private String locked;
      private Date created;
      private String lastupdated;
-     private Set sections = new HashSet(0);
-     private Set studentSubjectEmployeeMappings = new HashSet(0);
-     private Set studentElectivesAcademicyearMappings = new HashSet(0);
-     private Set courseStudentMappings = new HashSet(0);
-     private Set studentParentMappings = new HashSet(0);
-     private Set studentRoleMappings = new HashSet(0);
+     private Set<Section> sections = new HashSet<Section>(0);
+     private Set<StudentSubjectEmployeeMapping> studentSubjectEmployeeMappings = new HashSet<StudentSubjectEmployeeMapping>(0);
+     private Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings = new HashSet<StudentElectivesAcademicyearMapping>(0);
+     private Set<CourseStudentMapping> courseStudentMappings = new HashSet<CourseStudentMapping>(0);
+     private Set<StudentParentMapping> studentParentMappings = new HashSet<StudentParentMapping>(0);
+     private Set<StudentRoleMapping> studentRoleMappings = new HashSet<StudentRoleMapping>(0);
 
     public Student() {
     }
@@ -65,7 +65,7 @@ public class Student  implements java.io.Serializable {
         this.created = created;
         this.lastupdated = lastupdated;
     }
-    public Student(int id, Organization organization, String firstname, String lastname, String email, String studentid, String password, int enabled, int expired, String locked, Date created, String lastupdated, Set sections, Set studentSubjectEmployeeMappings, Set studentElectivesAcademicyearMappings, Set courseStudentMappings, Set studentParentMappings, Set studentRoleMappings) {
+    public Student(int id, Organization organization, String firstname, String lastname, String email, String studentid, String password, int enabled, int expired, String locked, Date created, String lastupdated, Set<Section> sections, Set<StudentSubjectEmployeeMapping> studentSubjectEmployeeMappings, Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings, Set<CourseStudentMapping> courseStudentMappings, Set<StudentParentMapping> studentParentMappings, Set studentRoleMappings) {
        this.id = id;
        this.organization = organization;
        this.firstname = firstname;
@@ -196,51 +196,51 @@ public class Student  implements java.io.Serializable {
         this.lastupdated = lastupdated;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getSections() {
+    public Set<Section> getSections() {
         return this.sections;
     }
     
-    public void setSections(Set sections) {
+    public void setSections(Set<Section> sections) {
         this.sections = sections;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getStudentSubjectEmployeeMappings() {
+    public Set<StudentSubjectEmployeeMapping> getStudentSubjectEmployeeMappings() {
         return this.studentSubjectEmployeeMappings;
     }
     
-    public void setStudentSubjectEmployeeMappings(Set studentSubjectEmployeeMappings) {
+    public void setStudentSubjectEmployeeMappings(Set<StudentSubjectEmployeeMapping> studentSubjectEmployeeMappings) {
         this.studentSubjectEmployeeMappings = studentSubjectEmployeeMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getStudentElectivesAcademicyearMappings() {
+    public Set<StudentElectivesAcademicyearMapping> getStudentElectivesAcademicyearMappings() {
         return this.studentElectivesAcademicyearMappings;
     }
     
-    public void setStudentElectivesAcademicyearMappings(Set studentElectivesAcademicyearMappings) {
+    public void setStudentElectivesAcademicyearMappings(Set<StudentElectivesAcademicyearMapping> studentElectivesAcademicyearMappings) {
         this.studentElectivesAcademicyearMappings = studentElectivesAcademicyearMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getCourseStudentMappings() {
+    public Set<CourseStudentMapping> getCourseStudentMappings() {
         return this.courseStudentMappings;
     }
     
-    public void setCourseStudentMappings(Set courseStudentMappings) {
+    public void setCourseStudentMappings(Set<CourseStudentMapping> courseStudentMappings) {
         this.courseStudentMappings = courseStudentMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getStudentParentMappings() {
+    public Set<StudentParentMapping> getStudentParentMappings() {
         return this.studentParentMappings;
     }
     
-    public void setStudentParentMappings(Set studentParentMappings) {
+    public void setStudentParentMappings(Set<StudentParentMapping> studentParentMappings) {
         this.studentParentMappings = studentParentMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="student")
-    public Set getStudentRoleMappings() {
+    public Set<StudentRoleMapping> getStudentRoleMappings() {
         return this.studentRoleMappings;
     }
     
-    public void setStudentRoleMappings(Set studentRoleMappings) {
+    public void setStudentRoleMappings(Set<StudentRoleMapping> studentRoleMappings) {
         this.studentRoleMappings = studentRoleMappings;
     }
 

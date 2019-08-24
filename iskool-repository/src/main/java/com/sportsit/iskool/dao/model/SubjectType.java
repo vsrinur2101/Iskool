@@ -26,7 +26,7 @@ public class SubjectType  implements java.io.Serializable {
 
      private int id;
      private String subjecttype;
-     private Set subjects = new HashSet(0);
+     private Set<Subject> subjects = new HashSet<Subject>(0);
 
     public SubjectType() {
     }
@@ -36,7 +36,7 @@ public class SubjectType  implements java.io.Serializable {
         this.id = id;
         this.subjecttype = subjecttype;
     }
-    public SubjectType(int id, String subjecttype, Set subjects) {
+    public SubjectType(int id, String subjecttype, Set<Subject> subjects) {
        this.id = id;
        this.subjecttype = subjecttype;
        this.subjects = subjects;
@@ -62,11 +62,11 @@ public class SubjectType  implements java.io.Serializable {
         this.subjecttype = subjecttype;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="subjectType")
-    public Set getSubjects() {
+    public Set<Subject> getSubjects() {
         return this.subjects;
     }
     
-    public void setSubjects(Set subjects) {
+    public void setSubjects(Set<Subject> subjects) {
         this.subjects = subjects;
     }
 

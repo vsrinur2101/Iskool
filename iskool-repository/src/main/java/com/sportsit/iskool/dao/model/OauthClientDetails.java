@@ -37,7 +37,7 @@ public class OauthClientDetails  implements java.io.Serializable {
      private String additionalInformation;
      private String autoapprove;
      private String authorizedGrantTypes;
-     private Set orgResourceScopes = new HashSet(0);
+     private Set<OrgResourceScope> orgResourceScopes = new HashSet<OrgResourceScope>(0);
 
     public OauthClientDetails() {
     }
@@ -49,7 +49,7 @@ public class OauthClientDetails  implements java.io.Serializable {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
     }
-    public OauthClientDetails(int id, Organization organization, String clientId, String clientSecret, String webServerRedirectUri, String authorities, Integer accessTokenValidity, Integer refreshTokenValidity, String additionalInformation, String autoapprove, String authorizedGrantTypes, Set orgResourceScopes) {
+    public OauthClientDetails(int id, Organization organization, String clientId, String clientSecret, String webServerRedirectUri, String authorities, Integer accessTokenValidity, Integer refreshTokenValidity, String additionalInformation, String autoapprove, String authorizedGrantTypes, Set<OrgResourceScope> orgResourceScopes) {
        this.id = id;
        this.organization = organization;
        this.clientId = clientId;
@@ -165,11 +165,11 @@ public class OauthClientDetails  implements java.io.Serializable {
         this.authorizedGrantTypes = authorizedGrantTypes;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="oauthClientDetails")
-    public Set getOrgResourceScopes() {
+    public Set<OrgResourceScope> getOrgResourceScopes() {
         return this.orgResourceScopes;
     }
     
-    public void setOrgResourceScopes(Set orgResourceScopes) {
+    public void setOrgResourceScopes(Set<OrgResourceScope> orgResourceScopes) {
         this.orgResourceScopes = orgResourceScopes;
     }
 

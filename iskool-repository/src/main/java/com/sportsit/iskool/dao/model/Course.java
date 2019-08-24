@@ -28,9 +28,9 @@ public class Course  implements java.io.Serializable {
      private String name;
      private String description;
      private int durationinmonths;
-     private Set courseStudentMappings = new HashSet(0);
-     private Set courseSubjectMappings = new HashSet(0);
-     private Set sections = new HashSet(0);
+     private Set<CourseStudentMapping> courseStudentMappings = new HashSet<CourseStudentMapping>(0);
+     private Set<CourseSubjectMapping> courseSubjectMappings = new HashSet<CourseSubjectMapping>(0);
+     private Set<Section> sections = new HashSet<Section>(0);
 
     public Course() {
     }
@@ -42,7 +42,7 @@ public class Course  implements java.io.Serializable {
         this.description = description;
         this.durationinmonths = durationinmonths;
     }
-    public Course(int id, String name, String description, int durationinmonths, Set courseStudentMappings, Set courseSubjectMappings, Set sections) {
+    public Course(int id, String name, String description, int durationinmonths, Set<CourseStudentMapping> courseStudentMappings, Set<CourseSubjectMapping> courseSubjectMappings, Set<Section> sections) {
        this.id = id;
        this.name = name;
        this.description = description;
@@ -90,27 +90,27 @@ public class Course  implements java.io.Serializable {
         this.durationinmonths = durationinmonths;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="course")
-    public Set getCourseStudentMappings() {
+    public Set<CourseStudentMapping> getCourseStudentMappings() {
         return this.courseStudentMappings;
     }
     
-    public void setCourseStudentMappings(Set courseStudentMappings) {
+    public void setCourseStudentMappings(Set<CourseStudentMapping> courseStudentMappings) {
         this.courseStudentMappings = courseStudentMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="course")
-    public Set getCourseSubjectMappings() {
+    public Set<CourseSubjectMapping> getCourseSubjectMappings() {
         return this.courseSubjectMappings;
     }
     
-    public void setCourseSubjectMappings(Set courseSubjectMappings) {
+    public void setCourseSubjectMappings(Set<CourseSubjectMapping> courseSubjectMappings) {
         this.courseSubjectMappings = courseSubjectMappings;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="course")
-    public Set getSections() {
+    public Set<Section> getSections() {
         return this.sections;
     }
     
-    public void setSections(Set sections) {
+    public void setSections(Set<Section> sections) {
         this.sections = sections;
     }
 
