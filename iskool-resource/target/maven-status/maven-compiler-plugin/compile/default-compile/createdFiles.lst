@@ -1,0 +1,6 @@
+com\iskool\lab\sec\oauth\jwt\ds\config\SecurityProperties$JwtProperties.class
+com\iskool\lab\sec\oauth\jwt\ds\web\UserController.class
+com\iskool\lab\sec\oauth\jwt\ds\ResourceServerJwtApplication.class
+com\iskool\lab\sec\oauth\jwt\ds\config\SecurityProperties.class
+com\iskool\lab\sec\oauth\jwt\ds\config\WebSecurityConfiguration.class
+com\iskool\lab\sec\oauth\jwt\ds\config\ResourceServerConfiguration.class

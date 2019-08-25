@@ -11,6 +11,8 @@ import java.security.Principal;
 @RestController
 @RequestMapping("/me")
 public class UserController {
+	
+	private static final String RESOURCE_ID="USER_CONTROLLER";
 
     @GetMapping
     @PreAuthorize("hasRole('ROLE_USER')")
