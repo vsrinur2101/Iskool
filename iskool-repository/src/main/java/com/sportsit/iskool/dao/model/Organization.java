@@ -40,7 +40,7 @@ public class Organization  implements java.io.Serializable {
         this.name = name;
         this.address = address;
     }
-    public Organization(int id, String name, String address, Set<Employee> employees, Set<Academicyear> academicyears, Set<Student> students, Set<Department> departments, Set<OauthClientDetailses> oauthClientDetailses) {
+    public Organization(int id, String name, String address, Set<Employee> employees, Set<Academicyear> academicyears, Set<Student> students, Set<Department> departments, Set<OauthClientDetails> oauthClientDetailses) {
        this.id = id;
        this.name = name;
        this.address = address;
