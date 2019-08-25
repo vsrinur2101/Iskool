@@ -1,6 +1,8 @@
 package com.iskool.lab.sec.oauth.jwt.config.security;
 
 import com.iskool.lab.sec.oauth.jwt.config.props.SecurityProperties;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,12 +28,15 @@ import java.security.KeyPair;
 @EnableAuthorizationServer
 @EnableConfigurationProperties(SecurityProperties.class)
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
 
     private final DataSource dataSource;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final SecurityProperties securityProperties;
-    private final UserDetailsService userDetailsService;
+    //private final UserDetailsService userDetailsService;
 
     private JwtAccessTokenConverter jwtAccessTokenConverter;
     private TokenStore tokenStore;
@@ -88,7 +93,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     public void configure(final AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.authenticationManager(this.authenticationManager)
                 .accessTokenConverter(jwtAccessTokenConverter())
-                .userDetailsService(this.userDetailsService)
+               // .userDetailsService(this.userDetailsService)
+                .userDetailsService(userDetailsService)
                 .tokenStore(tokenStore());
     }
 
